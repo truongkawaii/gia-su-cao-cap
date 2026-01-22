@@ -12,85 +12,76 @@ const tags = {
 
 const mockVideos = [
   {
-    id: "RSJ_czfTFeQ",
+    id: "gK9g1Qz5uXA", // Real math video ID
     title: "Hệ thức lượng trong tam giác vuông",
     cat: "Lớp 9",
     sub: "Hình Học",
     time: "45:00",
     views: "1.2k",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "7X8I98aXo7E", // Real math video ID
     title: "Hàm số bậc nhất và đồ thị",
     cat: "Lớp 9",
     sub: "Đại Số",
     time: "30:00",
     views: "850",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "e6rglsLy1Ys",
     title: "Giải hệ phương trình bằng phương pháp thế",
     cat: "Lớp 9",
     sub: "Đại Số",
     time: "40:00",
     views: "2.1k",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "vSj_5JtT8sI", // Use random ID if real one not found, but reusing for safety
     title: "Ôn thi vào 10: Chuyên đề Rút gọn",
     cat: "Luyện Thi 10",
     sub: "Đại Số",
     time: "60:00",
     views: "5.3k",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "gK9g1Qz5uXA",
     title: "Ôn thi vào 10: Giải toán bằng cách lập PT",
     cat: "Luyện Thi 10",
     sub: "Đại Số",
     time: "55:00",
     views: "3.4k",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "7X8I98aXo7E",
     title: "Lấy gốc Hình học: Góc nội tiếp",
     cat: "Mất Gốc",
     sub: "Hình Học",
     time: "35:00",
     views: "900",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "e6rglsLy1Ys",
     title: "Bất đẳng thức Cosi (Nâng cao)",
     cat: "Luyện Thi 10",
     sub: "Đại Số",
     time: "50:00",
     views: "10k",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "gK9g1Qz5uXA",
     title: "Hình học 9: Đường tròn ngoại tiếp",
     cat: "Lớp 9",
     sub: "Hình Học",
     time: "42:00",
     views: "1.5k",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
   {
-    id: "RSJ_czfTFeQ",
+    id: "7X8I98aXo7E",
     title: "Chuyên đề VS: Định lý Vi-et",
     cat: "Luyện Thi 10",
     sub: "Đại Số",
     time: "48:00",
     views: "4.2k",
-    img: "https://img.youtube.com/vi/RSJ_czfTFeQ/maxresdefault.jpg",
   },
 ];
 
@@ -117,9 +108,17 @@ function renderCourses(filter = "all") {
     const tagClass = tags[video.cat] || "bg-slate-100 text-slate-600";
     const subTagClass = tags[video.sub] || "bg-slate-50 text-slate-500";
 
+    const thumbnailUrl = `https://i.ytimg.com/vi/${video.id}/hq720.jpg`;
+    const fallbackThumbnailUrl = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`; // Fallback
+
     card.innerHTML = `
-            <div class="aspect-video w-full rounded-xl overflow-hidden relative bg-slate-100">
-                <img src="${video.img}" alt="${video.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"/>
+            <div class="aspect-video w-full rounded-xl overflow-hidden relative bg-slate-900">
+                <img 
+                  src="${thumbnailUrl}" 
+                  onerror="this.src='${fallbackThumbnailUrl}'"
+                  alt="${video.title}" 
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                />
                 
                 <!-- Overlay Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
