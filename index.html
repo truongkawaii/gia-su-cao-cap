@@ -71,9 +71,99 @@
           >
             Liên Hệ
           </a>
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 text-slate-600 hover:text-indigo-600 transition-colors"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center gap-8"
+    >
+      <button
+        id="close-menu-btn"
+        class="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+      <a
+        href="index.html"
+        class="text-2xl font-bold text-slate-900 hover:text-indigo-600"
+        onclick="
+          document
+            .getElementById('mobile-menu')
+            .classList.add('translate-x-full')
+        "
+        >Trang Chủ</a
+      >
+      <a
+        href="bai-giang.html"
+        class="text-2xl font-bold text-slate-900 hover:text-indigo-600"
+        onclick="
+          document
+            .getElementById('mobile-menu')
+            .classList.add('translate-x-full')
+        "
+        >Bài Giảng</a
+      >
+      <a
+        href="#about"
+        class="text-2xl font-bold text-slate-900 hover:text-indigo-600"
+        onclick="
+          document
+            .getElementById('mobile-menu')
+            .classList.add('translate-x-full')
+        "
+        >Giới Thiệu</a
+      >
+      <a
+        href="#philosophy"
+        class="text-2xl font-bold text-slate-900 hover:text-indigo-600"
+        onclick="
+          document
+            .getElementById('mobile-menu')
+            .classList.add('translate-x-full')
+        "
+        >Phương Pháp</a
+      >
+      <a
+        href="https://www.facebook.com/nguyenngoc.toan.14203"
+        target="_blank"
+        class="px-8 py-3 bg-slate-900 text-white rounded-full font-bold shadow-xl"
+        >Đăng Ký Học</a
+      >
+    </div>
 
     <main class="relative z-10 pt-32 pb-20 overflow-hidden">
       <!-- Hero Section -->

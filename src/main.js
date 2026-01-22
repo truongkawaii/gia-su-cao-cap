@@ -43,7 +43,7 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("animate-fade-up");
-        entry.target.classList.remove("opacity-0");
+        entry.target.style.opacity = 1;
         observer.unobserve(entry.target);
       }
     });
