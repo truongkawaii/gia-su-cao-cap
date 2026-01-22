@@ -5,9 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài Giảng Toán - Thầy Toản Pro</title>
-    <script type="module" crossorigin src="./assets/lecture-CORQ4o4H.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/index-vy-yMpN_.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-BTjM6pZ8.css">
+    <script type="module" crossorigin src="./assets/lecture-DWmW2EHG.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/index-B2WcPv7I.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-Ci1veaLJ.css">
   </head>
   <body
     class="bg-pro-bg text-slate-900 font-sans selection:bg-indigo-500 selection:text-white"
@@ -71,7 +71,27 @@
           </a>
         </div>
       </div>
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-indigo-600 transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center gap-8">
+      <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <a href="index.html" class="text-2xl font-bold text-slate-900 hover:text-indigo-600">Trang Chủ</a>
+      <a href="bai-giang.html" class="text-2xl font-bold text-slate-900 hover:text-indigo-600">Bài Giảng</a>
+      <a href="https://www.facebook.com/nguyenngoc.toan.14203" target="_blank" class="px-8 py-3 bg-slate-900 text-white rounded-full font-bold shadow-xl">Đăng Ký Học</a>
+    </div>
 
     <main
       class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
